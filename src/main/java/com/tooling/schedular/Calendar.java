@@ -57,6 +57,9 @@ public final class Calendar {
         return true;
     }
 
+    /**
+     * TODO: display could move to separate interface and inject into this class so that we can support multiple output writer.
+     */
     public void display() {
         eventsByDate
                 .entrySet()

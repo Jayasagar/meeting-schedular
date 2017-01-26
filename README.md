@@ -4,7 +4,7 @@ Simple system for processing batches of booking requests and create a booking ca
 This is Java 8/Gradle solution.
 
 ### Run
-* cd to $Checkout Dir
+* cd to $Checkout dir
 * ./gradlew build
 * java -jar build/libs/meeting-schedular-1.0.jar
 
