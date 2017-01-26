@@ -8,6 +8,10 @@ import java.time.LocalTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Represents the calendar with scheduled events. Responsible for processing the booking request.
+ * Note: Right now, this class only write the results to the console.
+ */
 public final class Calendar {
     private LocalTime officeStartTime;
     private LocalTime officeEndTime;
@@ -26,6 +30,12 @@ public final class Calendar {
 
     private Calendar() {}
 
+    /**
+     * Retunns true if booking is successful.
+     *
+     * It ignore booking silently and returns false if any of the given system constraints not met!
+     * @param bookingRequest
+     */
     public boolean book(BookingRequest bookingRequest) {
         Objects.requireNonNull(bookingRequest);
 
@@ -79,6 +89,7 @@ public final class Calendar {
     }
 
     private boolean isEventOverlapping(LocalDate day, Event event) {
+        // Validate only if calendar has events with the given day, else no chance of overlapping.
         if (eventsByDate.containsKey(day)) {
             List<Event> dayEvents = eventsByDate.get(day);
 
