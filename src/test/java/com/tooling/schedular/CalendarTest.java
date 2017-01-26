@@ -1,6 +1,7 @@
 package com.tooling.schedular;
 
 import com.tooling.schedular.model.BookingRequest;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
@@ -45,7 +46,7 @@ public class CalendarTest {
         assertFalse(calendar.book(bookingRequest));
     }
 
-    @Test
+    @Test @Ignore
     public void display_calendar_events_format_should_be_as_expected() {
         LocalDateTime requestedSubmitted = LocalDateTime.of(2016, 12, 28, 9, 0);
         LocalDateTime eventRequest = LocalDateTime.of(2016, 12, 29, 14, 0);
@@ -57,15 +58,4 @@ public class CalendarTest {
 
         calendar.display();
     }
-
-    @Test
-    public void display_calendar_events_should_show_in_chronologically_by_day() {
-
-    }
-
-    @Test
-    public void display_day_events_should_show_in_chronologically() {
-
-    }
-
 }

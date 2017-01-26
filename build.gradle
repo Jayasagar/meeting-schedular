@@ -25,6 +25,14 @@ dependencies {
     compileOnly "org.projectlombok:lombok:1.16.10"
 
     // Tests
-    testCompile("junit:junit")
+    testCompile("junit:junit:4.12")
+}
 
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.tooling.schedular.Application'
+        )
+    }
 }

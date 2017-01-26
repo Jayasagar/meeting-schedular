@@ -31,7 +31,7 @@ public final class Calendar {
     private Calendar() {}
 
     /**
-     * Retunns true if booking is successful.
+     * Returns true if booking is successful.
      *
      * It ignore booking silently and returns false if any of the given system constraints not met!
      * @param bookingRequest
@@ -44,7 +44,7 @@ public final class Calendar {
             return false;
         }
 
-        // Validate is event overlap with existing events
+        // Validate is event overlap with existing events on the given day
         Event event = Event.of(bookingRequest);
         if (isEventOverlapping(bookingRequest.startTimeToLocalDate(), event)) {
             return false;
