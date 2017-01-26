@@ -3,6 +3,8 @@ Simple system for processing batches of booking requests and create a booking ca
 
 This is Java 8/Gradle solution.
 
+Please see the main class **com.tooling.schedular.Application**, you can modify the test input here!
+
 ### Run
 * cd to $Checkout dir
 * ./gradlew build
