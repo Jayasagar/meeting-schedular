@@ -52,15 +52,8 @@ public final class Calendar {
 
         // Add event to calendar
         LocalDate eventDate = bookingRequest.startTimeToLocalDate();
-        List<Event> dayEvents = eventsByDate.get(eventDate);
-        if (dayEvents == null) {
-            List<Event> events = new ArrayList<Event>();
-            events.add(event);
-            eventsByDate.put(eventDate, events);
-        } else {
-            dayEvents.add(event);
-            eventsByDate.put(eventDate, dayEvents);
-        }
+        addEvent(eventDate, event);
+
         return true;
     }
 
@@ -100,6 +93,18 @@ public final class Calendar {
         }
 
         return false;
+    }
+
+    private void addEvent(LocalDate eventDate, Event event) {
+        List<Event> dayEvents = eventsByDate.get(eventDate);
+        if (dayEvents == null) {
+            List<Event> events = new ArrayList<Event>();
+            events.add(event);
+            eventsByDate.put(eventDate, events);
+        } else {
+            dayEvents.add(event);
+            eventsByDate.put(eventDate, dayEvents);
+        }
     }
 
 }
