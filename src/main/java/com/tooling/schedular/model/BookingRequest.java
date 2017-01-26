@@ -28,6 +28,7 @@ public class BookingRequest {
         Objects.requireNonNull(tuple1);
         Objects.requireNonNull(tuple2);
 
+        // TODO: validate input and handle exception
         int index = tuple1.lastIndexOf(' ');
         String submissionTime = tuple1.substring(0, index);
         String employeeId = tuple1.substring(index).trim();
@@ -64,10 +65,12 @@ public class BookingRequest {
         return startTime.toLocalDate();
     }
     private static LocalDateTime parseDateToSeconds(String date) {
+        // TODO: extract constant to common place and reuse the base format
         return LocalDateTime.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
     private static LocalDateTime parseDateToMinutes(String date) {
+        // TODO: extract constant to common place
         return LocalDateTime.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
     }
 }
