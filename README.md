@@ -10,7 +10,7 @@ Please see the main class **com.tooling.schedular.Application**, you can modify 
 * ./gradlew build
 * java -jar build/libs/meeting-schedular-1.0.jar
 
-### Given guidelines :)
+### guidelines :)
 * TDD
 * Robustness
 * No over engg
